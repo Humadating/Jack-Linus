@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jack & Linus — Law Firm | JackLinus.com</title>
-  <meta name="description" content="Jack & Linus is a boutique law firm providing precise, client-focused counsel. Explore our practice areas and schedule a consultation." />
+  <title>Jack & Linus — Property Management | JackLinus.com</title>
+  <meta name="description" content="Jack & Linus Property Management — Leasing, maintenance, tenant screening, rent collection, and owner reporting with clear communication and care." />
   <link rel="canonical" href="https://jacklinus.com/" />
   <meta name="robots" content="index,follow" />
 
   <!-- Open Graph / SEO -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Jack & Linus — Law Firm" />
+  <meta property="og:title" content="Jack & Linus — Property Management" />
   <meta property="og:site_name" content="Jack & Linus" />
   <meta property="og:url" content="https://jacklinus.com/" />
-  <meta property="og:description" content="Black-and-white, Cinzel-typographic website for Jack & Linus. Explore practice areas and contact us for a consultation." />
+  <meta property="og:description" content="Jack & Linus Property Management. Professional property care with transparent communication and reliable operations." />
 
   <!-- Favicon (white 'JL' on black, side-by-side) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='%23000'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Cinzel,serif' font-size='140' fill='%23fff'%3EJL%3C/text%3E%3C/svg%3E" />
@@ -47,7 +47,7 @@
     /* Utility */
     .simple { font-family: Arial, Helvetica, sans-serif; letter-spacing: normal; }
 
-    /* Header / Nav */
+    /* Header / Nav (brand left with centered subline under it) */
     .skip { position: absolute; left: -9999px; top: auto; }
     .skip:focus { left: 12px; top: 12px; background: var(--white); color: var(--black); padding: 8px 12px; border: 1px solid var(--black); z-index: 9999; }
 
@@ -57,17 +57,24 @@
       border-bottom: 1px solid var(--black);
     }
     .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
-    .brand a { font-weight: 900; font-size: 24px; letter-spacing: .06em; text-transform: uppercase; }
-    .brand small { font-weight: 400; font-size: 12px; letter-spacing: .2em; display: block; }
+    .brand { display: inline-block; text-align: center; line-height: 1.05; }
+    .brand a { display: inline-block; font-weight: 900; font-size: 24px; letter-spacing: .06em; text-transform: uppercase; }
+    .brand small {
+      font-weight: 700;
+      font-size: clamp(10px, 1.1vw, 13px);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 2px;
+    }
+
     .menu { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
     .menu a { text-transform: uppercase; font-weight: 700; letter-spacing: .08em; font-size: 14px; }
     .menu a:hover { text-decoration: underline; }
 
     .hamburger { display: none; background: transparent; border: 1px solid var(--black); width: 42px; height: 42px; align-items: center; justify-content: center; }
     .hamburger span { width: 22px; height: 2px; background: var(--black); display: block; position: relative; }
-    .hamburger span::before, .hamburger span::after {
-      content: ""; position: absolute; left: 0; width: 22px; height: 2px; background: var(--black);
-    }
+    .hamburger span::before, .hamburger span::after { content: ""; position: absolute; left: 0; width: 22px; height: 2px; background: var(--black); }
     .hamburger span::before { top: -7px; }
     .hamburger span::after { top: 7px; }
 
@@ -82,17 +89,22 @@
       .menu.open { transform: translateY(0); }
     }
 
-    /* Hero */
-    .hero { background: var(--black); color: var(--white); padding: 120px 0 96px; }
+    /* Hero (centered lockup like the logo) */
+    .hero { background: var(--black); color: var(--white); padding: 120px 0 96px; text-align: center; }
     .hero h1 {
-      margin: 0 0 12px;
+      margin: 0 0 6px;
       font-size: clamp(44px, 9vw, 108px);
       line-height: .95;
       text-transform: uppercase;
       letter-spacing: .04em;
     }
-    .hero p { margin: 0; font-size: clamp(16px, 2.6vw, 22px); max-width: 42ch; }
-    .hero .cta { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+    .subline {
+      margin: 0;
+      font-size: clamp(14px, 1.8vw, 20px);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero .cta { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; justify-content: center; }
 
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
@@ -117,13 +129,11 @@
     @media (max-width: 680px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
 
     /* Cards */
-    .card {
-      border: 1px solid currentColor; padding: 22px; background: transparent;
-    }
+    .card { border: 1px solid currentColor; padding: 22px; background: transparent; }
     .card h3 { margin: 0 0 8px; font-size: 22px; text-transform: uppercase; letter-spacing: .06em; }
     .card p { margin: 0; }
 
-    /* Attorneys */
+    /* Team */
     .person { display: grid; grid-template-columns: 140px 1fr; gap: 20px; align-items: center; }
     .avatar {
       width: 140px; aspect-ratio: 1/1; border: 1px solid currentColor; display: grid; place-items: center;
@@ -163,15 +173,15 @@
     <div class="container nav">
       <div class="brand">
         <a href="https://jacklinus.com/">Jack &amp; Linus</a>
-        <small>Law Firm</small>
+        <small>Property Management</small>
       </div>
       <nav>
         <button class="hamburger" aria-label="Toggle menu" aria-controls="menu" aria-expanded="false">
           <span></span>
         </button>
         <ul id="menu" class="menu" role="menubar">
-          <li role="none"><a role="menuitem" href="#practice">Practice</a></li>
-          <li role="none"><a role="menuitem" href="#attorneys">Attorneys</a></li>
+          <li role="none"><a role="menuitem" href="#services">Services</a></li>
+          <li role="none"><a role="menuitem" href="#team">Team</a></li>
           <li role="none"><a role="menuitem" href="#approach">Approach</a></li>
           <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
         </ul>
@@ -184,84 +194,62 @@
     <section class="hero" aria-label="Hero">
       <div class="container">
         <h1>Jack &amp; Linus</h1>
-        <!-- Keep space; make text black on black -->
-        <p class="simple" style="color:#000" aria-hidden="true">jacklinus.com</p>
+        <p class="subline">Property Management</p>
         <div class="cta">
-          <a class="btn invert" href="#contact">Schedule a Consultation</a>
-          <a class="btn" href="#practice">Explore Practice Areas</a>
+          <a class="btn invert" href="#contact">Request a Proposal</a>
+          <a class="btn" href="#services">View Services</a>
         </div>
       </div>
     </section>
 
-    <!-- Practice Areas -->
-    <section id="practice" aria-labelledby="practice-title">
+    <!-- Services -->
+    <section id="services" aria-labelledby="services-title">
       <div class="container">
-        <h2 class="section-title" id="practice-title">Practice Areas</h2>
-        <p class="section-lead">Focused practice built on rigorous preparation and measured strategy.</p>
+        <h2 class="section-title" id="services-title">Services</h2>
+        <p class="section-lead">Full-service property management with clear reporting and proactive care.</p>
         <div class="grid grid-3">
           <article class="card">
-            <h3>Business &amp; Corporate</h3>
-            <p>Entity formation, contracts, governance, and transactions with clarity from term sheet to closing.</p>
+            <h3>Leasing &amp; Marketing</h3>
+            <p>Professional listings, showings, and applications to minimize vacancy and find qualified tenants.</p>
           </article>
           <article class="card">
-            <h3>Litigation &amp; Disputes</h3>
-            <p>Strategic advocacy in commercial disputes, injunctions, and alternative dispute resolution.</p>
+            <h3>Tenant Screening</h3>
+            <p>Credit, background, income, and reference checks for fair, consistent, and compliant approvals.</p>
           </article>
           <article class="card">
-            <h3>Real Estate</h3>
-            <p>Acquisitions, leasing, and development with careful attention to risk and timelines.</p>
+            <h3>Rent Collection</h3>
+            <p>Online payments, reminders, and transparent statements—funds delivered on time, every time.</p>
           </article>
           <article class="card">
-            <h3>Employment</h3>
-            <p>Policies, agreements, compliance, and dispute resolution for employers and executives.</p>
+            <h3>Maintenance</h3>
+            <p>24/7 issue intake, trusted vendors, and preventative schedules to protect your asset.</p>
           </article>
           <article class="card">
-            <h3>Intellectual Property</h3>
-            <p>Protection and enforcement of trademarks, copyrights, and licensing arrangements.</p>
+            <h3>Inspections</h3>
+            <p>Move-in/out and periodic inspections with photo documentation and actionable reports.</p>
           </article>
           <article class="card">
-            <h3>Private Client</h3>
-            <p>Estate planning, trusts, and fiduciary guidance tailored to family and business objectives.</p>
+            <h3>Accounting &amp; Reports</h3>
+            <p>Monthly owner statements, year-end 1099s, deposits management, and tax-ready records.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Attorneys -->
-    <section id="attorneys" class="dark" aria-labelledby="attorneys-title">
+    <!-- Team -->
+    <section id="team" class="dark" aria-labelledby="team-title">
       <div class="container">
-        <h2 class="section-title" id="attorneys-title">Attorneys</h2>
-        <p class="section-lead">Direct access to partners. Clear communication at every step.</p>
+        <h2 class="section-title" id="team-title">Team</h2>
+        <p class="section-lead">Direct access to leadership and responsive communication.</p>
 
-        <!-- Lead attorney centered on top -->
         <article class="card person person-lead">
           <div class="avatar" aria-hidden="true">R</div>
           <div>
             <h4>Ryan Ward</h4>
             <small class="muted">Managing Partner</small>
-            <p>Everything under the sun. </p>
+            <p>Everything under the sun.</p>
           </div>
         </article>
-
-        <!-- Name Partners side-by-side -->
-        <div class="grid grid-2">
-          <article class="card person">
-            <div class="avatar" aria-hidden="true">J</div>
-            <div>
-              <h4>Robert Jack</h4>
-              <small class="muted">Name Partner</small>
-              <p>Focuses on corporate transactions and complex commercial disputes with a pragmatic, outcome‑oriented approach.</p>
-            </div>
-          </article>
-          <article class="card person">
-            <div class="avatar" aria-hidden="true">L</div>
-            <div>
-              <h4>Benjamin Linus</h4>
-              <small class="muted">Name Partner</small>
-              <p>Advises on real estate, employment, and private client matters with meticulous attention to risk and detail.</p>
-            </div>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -271,20 +259,20 @@
         <h2 class="section-title" id="approach-title">Our Approach</h2>
         <div class="grid grid-3">
           <article class="card">
-            <h3>Precision</h3>
-            <p>Every matter receives rigorous analysis, disciplined drafting, and clear next steps.</p>
+            <h3>Care</h3>
+            <p>We treat every property like it’s our own—clear standards, documented processes, real accountability.</p>
           </article>
           <article class="card">
-            <h3>Advocacy</h3>
-            <p>We position clients for leverage—whether across the table or in the courtroom.</p>
+            <h3>Transparency</h3>
+            <p>No surprises. Upfront pricing, detailed statements, and updates you never have to chase.</p>
           </article>
           <article class="card">
-            <h3>Integrity</h3>
-            <p>Direct advice, transparent scope, and work product that stands on its own.</p>
+            <h3>Efficiency</h3>
+            <p>Fast tenant response, proactive maintenance, and systems that keep operations running smoothly.</p>
           </article>
         </div>
         <hr class="rule" />
-        <p class="muted">Attorney Advertising. Prior results do not guarantee a similar outcome. Use of this site does not create an attorney–client relationship.</p>
+        <p class="muted">Equal Housing Opportunity. Availability and pricing subject to change without notice.</p>
       </div>
     </section>
 
@@ -292,7 +280,7 @@
     <section id="contact" class="dark" aria-labelledby="contact-title">
       <div class="container">
         <h2 class="section-title" id="contact-title">Contact</h2>
-        <p class="section-lead">Tell us about your matter. We will follow up to coordinate a consultation.</p>
+        <p class="section-lead">Tell us about your property. We’ll follow up with next steps and a proposal.</p>
 
         <div class="grid grid-2">
           <div class="card">
@@ -319,7 +307,7 @@
               </div>
               <div>
                 <label for="message">How can we help?</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" placeholder="Tell us about your units, goals, and timeline..." required></textarea>
               </div>
               <button class="btn invert" type="submit">Send</button>
               <div id="form-status" class="status" aria-live="polite"></div>
@@ -355,12 +343,12 @@
     </div>
   </footer>
 
-  <!-- Structured Data (update fields as needed) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "Jack & Linus",
+    "@type": "RealEstateAgent",
+    "name": "Jack & Linus Property Management",
     "url": "https://jacklinus.com/"
   }
   </script>
