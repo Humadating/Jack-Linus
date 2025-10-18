@@ -47,7 +47,7 @@
     /* Utility */
     .simple { font-family: Arial, Helvetica, sans-serif; letter-spacing: normal; }
 
-    /* Header / Nav (brand left with centered subline under it) */
+    /* Header / Nav */
     .skip { position: absolute; left: -9999px; top: auto; }
     .skip:focus { left: 12px; top: 12px; background: var(--white); color: var(--black); padding: 8px 12px; border: 1px solid var(--black); z-index: 9999; }
 
@@ -89,7 +89,7 @@
       .menu.open { transform: translateY(0); }
     }
 
-    /* Hero (centered lockup like the logo) */
+    /* Hero */
     .hero { background: var(--black); color: var(--white); padding: 120px 0 96px; text-align: center; }
     .hero h1 {
       margin: 0 0 6px;
@@ -142,6 +142,7 @@
     .dark .avatar { background: var(--black); color: var(--white); }
     .person h4 { margin: 0 0 6px; font-size: 20px; text-transform: uppercase; letter-spacing: .06em; }
     .person small { display: block; margin-bottom: 8px; }
+    .person .phone { margin-bottom: 8px; } /* space before the blurb */
     .person-lead { max-width: 720px; margin: 0 auto 24px; }
 
     /* Contact */
@@ -247,7 +248,7 @@
           <div>
             <h4>Ryan Ward</h4>
             <small class="muted">Managing Partner</small>
-            <p>Everything under the sun.</p>
+            <p class="phone"><a href="tel:14242070074">424‑207‑0074</a></p>
           </div>
         </article>
       </div>
@@ -349,7 +350,8 @@
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Jack & Linus Property Management",
-    "url": "https://jacklinus.com/"
+    "url": "https://jacklinus.com/",
+    "telephone": "+1-424-207-0074"
   }
   </script>
 
