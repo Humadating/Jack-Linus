@@ -211,10 +211,10 @@
 <header>
     <div class="container" style="display:flex; justify-content: space-between; align-items: center;">
         <div class="brand">
-            <a href="index.html">Jack &amp; Linus</a>
+            <a href="/">Jack &amp; Linus</a>
             <small>Parking Services</small>
         </div>
-        <a href="index.html" class="simple" style="font-size:14px; text-transform:uppercase; font-weight:700;">&larr; Back to Home</a>
+        <a href="/" class="simple" style="font-size:14px; text-transform:uppercase; font-weight:700;">&larr; Back to Home</a>
     </div>
 </header>
 
@@ -245,7 +245,7 @@
             <div class="form-title">Pay by Credit or Debit Card (Mock)</div>
             
             <p class="stjude-message simple">
-                Note: A minimum payment of $20.00 is required. A portion of every transaction is proudly donated to the <strong>Saint Jude Foundation</strong>. Thank you for your support!
+                Note: A minimum payment of $15.00 is required. A portion of every transaction is proudly donated to the <strong>Saint Jude Foundation</strong>. Thank you for your support!
             </p>
 
             <form id="card-payment-form" novalidate>
@@ -268,8 +268,8 @@
                     </div>
                 </div>
                 <div>
-                    <label for="amount">Payment Amount (Minimum $20.00)</label>
-                    <input id="amount" name="amount" type="number" inputmode="decimal" step="0.01" min="20.00" value="20.00" placeholder="20.00" required />
+                    <label for="amount">Payment Amount (Minimum $15.00)</label>
+                    <input id="amount" name="amount" type="number" inputmode="decimal" step="0.01" min="15.00" value="15.00" placeholder="15.00" required />
                 </div>
                 <button class="btn-submit" type="submit">Submit Payment</button>
                 <div id="payment-status" class="status simple" aria-live="polite"></div>
@@ -292,9 +292,9 @@
     form?.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // The browser handles min="20.00" and required validation automatically with checkValidity()
+        // The browser handles min="15.00" and required validation automatically with checkValidity()
         if (!form.checkValidity()) {
-            status.textContent = "Please ensure the amount is $20.00 or higher and all fields are filled.";
+            status.textContent = "Please ensure the amount is $15.00 or higher and all fields are filled.";
             status.style.color = "red";
             return;
         }
